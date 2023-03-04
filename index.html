@@ -1,0 +1,28 @@
+const fetchBtn = document.getElementById('fetch-btn');
+const dataTable = document.getElementById('data-table');
+
+fetchBtn.addEventListener('click', () => {
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(data => {
+      dataTable.innerHTML = '';
+      data.forEach(person => {
+        const row = document.createElement('tr');
+        const nameCell = document.createElement('td');
+        const phoneCell = document.createElement('td');
+        nameCell.textContent = person.name;
+        phoneCell.textContent = person.phone;
+        row.appendChild(nameCell);
+        row.appendChild(phoneCell);
+        dataTable.appendChild(row);
+      });
+    });
+});
+</script>
+</body>
+</html>
+This code creates a button with an id of "fetch-btn" and a table with an id of "data-table". When the button is clicked, it uses the fetch API to get data from the URL and then converts the response to JSON format. Then it clears the table and creates a new row for each person with their name and phone number. Finally, it appends each row to the table.
+
+
+
+
