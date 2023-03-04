@@ -1,28 +1,48 @@
-const fetchBtn = document.getElementById('fetch-btn');
-const dataTable = document.getElementById('data-table');
 
-fetchBtn.addEventListener('click', () => {
-  fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then(data => {
-      dataTable.innerHTML = '';
-      data.forEach(person => {
-        const row = document.createElement('tr');
-        const nameCell = document.createElement('td');
-        const phoneCell = document.createElement('td');
-        nameCell.textContent = person.name;
-        phoneCell.textContent = person.phone;
-        row.appendChild(nameCell);
-        row.appendChild(phoneCell);
-        dataTable.appendChild(row);
-      });
-    });
-});
-</script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Week5 Hand-in</title>
+</head>
+
+<body style="font-family: sans-serif">
+
+    <h1>Week 5 Hand-in for</h1>
+    <ul>
+        <li>Rami</li>
+        <li>Rami0904</li>
+    </ul>
+    <div style="border:solid lightgray; max-width:60%;padding: 10px;">
+        <h3>IMPORTANT!</h3>
+        <p>This is in NO WAY how you are supposed to structure your JavaScript applications after this week.</p>
+        <p>It's just a number of isolated HTML-files that link to each other (observe the spinner in the top left corner
+            of your browser whenever you press a link).</p>
+        <p>Next week you will learn how to create "single page applications" with only one index.html file, and a number
+            of HTML snippets with corresponding JavaScript files. You will also see how content/data in these
+            files can be reused among the different parts of you program.</p>
+    </div>
+    <h2>JS Week5, day1-Exercises</h2>
+    <p>None of the exercises given day-1 involved the browser, so just make sure they are included in your github repo</p>
+
+    <h2>JS Week5, day2-Exercises</h2>
+    <ul>
+        <li><a href="js-day2-ex1.html">Exercise-1</a></li>
+        <li><a href="js-day2-ex2.html">Exercise-2</a></li>
+        <li><a href="js-day2-ex3.html">Exercise-3</a></li>
+        <li><a href="js-day2-ex4.html">Exercise-4</a></li>
+    </ul>
+
+    <h2>JS Week5, day3-Exercises</h2>
+    <ul>
+        <li><a href="js-day3-ex1_2.html">Exercise-1+2</a></li>
+        <li><a href="js-day3-ex3.html">Exercise-3</a></li>
+        <li><a href="js-day3-ex4.html">Exercise-4</a></li>
+        <li><a href="day">Exercise-5 (EXTRA)</a></li>
+    </ul>
+    <h3>GitHub</h3>
+    <a href="https://github.com/Ramilade/Week5Handin">Exercise 5 GitHub repo</a>
 </body>
+
 </html>
-This code creates a button with an id of "fetch-btn" and a table with an id of "data-table". When the button is clicked, it uses the fetch API to get data from the URL and then converts the response to JSON format. Then it clears the table and creates a new row for each person with their name and phone number. Finally, it appends each row to the table.
-
-
-
-
