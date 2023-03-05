@@ -27,7 +27,7 @@ function makeTable(cars){
 }
 
 
-/*
+
 function getCarByID(evt){
     const id = document.getElementById("text-for-id").value
     fetch(URL+"/"+id)
@@ -44,4 +44,4 @@ function getCarByID(evt){
     .catch((error) => {
      document.getElementById("car-error").innerText = error
     })
- }*/
+ }
