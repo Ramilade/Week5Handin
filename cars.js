@@ -27,39 +27,3 @@ function makeTable(cars){
 
 
 }
-
-//Not ready yet. 
-/*
-function getCarByID(evt){
-
-    const id = document.getElementById("text-for-id2").value;
-    fetch(URLCar + "/" + id)
-      .then((res) => res.json())
-      .then((car) => {
-        const tr = `
-        <tr>
-        <td id="update-brand" contenteditable="true">${car.brand}</td>
-        <td id="update-model" contenteditable="true">${car.model}</td>
-        <td id="update-price" contenteditable="true">${car.pricePrDay}</td>
-        <td id="update-discount" contenteditable="true">${car.bestDiscount}</td>
-        </tr>`;
-        document.getElementById("tbody-car-fetched").innerHTML = tr;
-      })
-      .catch((err) => {
-        console.log(err);
-        alert("Something went wrong!");
-      });
-  }
-
-document.getElementById("btn-create-car").onclick = createCar;
-function createCar() {
-  const car = {
-    brand: document.getElementById("input-brand").value,
-    model: document.getElementById("input-model").value,
-    pricePrDay: document.getElementById("input-priceprday").value,
-    bestDiscount: document.getElementById("input-bestdiscount").value,
-  };
-
-  const returnMessage = document.getElementById("create-car-message");
-
-}*/
