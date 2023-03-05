@@ -1,4 +1,5 @@
 document.getElementById("btn-get-all").onclick = getAllCars
+document.getElementById("btn-fetch-car").onclick = getCarByID;
 
 
 
@@ -23,6 +24,24 @@ function makeTable(cars){
 
     document.getElementById("table-body-cars").innerHTML = tableRowsAsString
 
-
-
 }
+
+
+/*
+function getCarByID(evt){
+    const id = document.getElementById("text-for-id").value
+    fetch(URL+"/"+id)
+    .then(res => {
+     return res.json()})
+
+    .then(data => {
+     document.getElementById("car-id").innerText = data.id;
+     document.getElementById("car-brand").innerText = data.brand;
+     document.getElementById("car-model").innerText = data.model;
+     document.getElementById("car-model").innerText = data.pricePrDay;
+
+    })
+    .catch((error) => {
+     document.getElementById("car-error").innerText = error
+    })
+ }*/
