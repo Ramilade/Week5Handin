@@ -28,8 +28,10 @@ function makeTable(cars){
 
 }
 
+//Not ready yet. 
+/*
 function getCarByID(evt){
-    
+
     const id = document.getElementById("text-for-id2").value;
     fetch(URLCar + "/" + id)
       .then((res) => res.json())
@@ -59,4 +61,5 @@ function createCar() {
   };
 
   const returnMessage = document.getElementById("create-car-message");
-}
+
+}*/
