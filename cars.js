@@ -1,5 +1,4 @@
 document.getElementById("btn-get-all").onclick = getAllCars
-document.getElementById("btn-get-car").onclick = getCarByID
 
 
 
