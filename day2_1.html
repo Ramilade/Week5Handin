@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <div class="container" style="width: 100px;margin: 1px;">&nbsp;</div>
+    <div class="container" style="width: 100px;margin: 1px;">&nbsp;</div>
+    <div class="container" style="width: 100px;margin: 1px;">&nbsp;</div>
+
+  <button id="button">Click</button>
+
+
+  <script>
+    const divs = document.querySelectorAll("div");
+    const colorArray = [
+    "#E63946", "#F1FAEE", "#A8DADC", "#457B9D", "#1D3557", "#F72585",
+"#B5179E", "#7209B7", "#3A0CA3", "#4361EE", "#4895EF", "#4CC9F0",
+"#F94144", "#F3722C", "#F8961E", "#F9C74F", "#90BE6D", "#43AA8B",
+"#577590", "#277DA1", "#FECE44", "#FF8A5B", "#F6416C", "#FF4785",
+"#6D4C41", "#E6AF4B", "#4B4E6D", "#C08497", "#F7A399", "#DF6589", 
+"#FFA07A", "#FFDAB9", "#C7CEEA", "#D7BDE2", "#F1948A",
+"#BB8FCE", "#7DCEA0", "#AED6F1", "#F5B7B1", "#F8C471", "#82E0AA",
+"#E74C3C", "#2E4053", "#4CAF50", "#FADBD8", "#FFCC80", "#FFE0B2",
+"#9B59B6", "#F39C12", "#BDC3C7", "#2980B9", "#1ABC9C", "#34495E",
+"#E74C3C", "#2E4053", "#4CAF50", "#FADBD8", "#FFCC80", "#FFE0B2",
+"#F8B195", "#F67280", "#C06C84", "#6C5B7B", "#355C7D", "#BFD8B8",
+"#F0F66E", "#FFDE7D", "#FF6F69", "#C34A36", "#8E8D8A", "#ED6A5A",
+"#D8854F", "#6BBC9D", "#F7CAC9", "#3E3737", "#F1F1F2", "#CFD8DC",
+"#D6EAF8", "#A9CCE3", "#ABB7B7", "#FDEDEC", "#BFBFBF", "#FFC0CB",
+"#B2BEB5", "#E8D5B7", "#EFD9C3", "#FAE8EB", "#A4C2A5", "#9F9F9F"
+    ];
+
+    const color = colorArray[Math.floor(Math.random() * colorArray.length)];
+    
+    for (let i = 0; i < divs.length; i++) {
+      divs[i].style.background = color;
+    }
+
+    document.getElementById('button').onclick = () => {
+      for (let i = 0; i < divs.length; i++) {
+        divs[i].style.background = colorArray[Math.floor(Math.random() * colorArray.length)];
+      }
+    };
+  </script>

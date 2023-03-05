@@ -1,57 +1,56 @@
 /* Global styles */
 body {
-    font-family: sans-serif;
-    background-color: #0c1b33;
-    color: #fff;
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin: 2rem 0;
-  }
-  
-  h2 {
-    font-size: 1.8rem;
-    margin-top: 3rem;
-  }
-  
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  li {
-    margin: 1rem 0;
-  }
-  
-  a {
-    color: #fff;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Specific styles for elements in the index.html file */
-  
-  div {
-    border: solid lightgray;
-    max-width: 60%;
-    padding: 10px;
-    margin: 2rem auto;
-    background-color: #1a2c4e;
-  }
-  
-  h3 {
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-  }
-  
-  p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-  }
-  
+  font-family: sans-serif;
+  background-color: #0c1b33;
+  color: #fff;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 3rem;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 1rem 0;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Specific styles for elements in the index.html file */
+
+div {
+  border: solid lightgray;
+  max-width: 60%;
+  padding: 10px;
+  margin: 2rem auto;
+  background-color: #1a2c4e;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
