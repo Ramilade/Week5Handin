@@ -27,8 +27,10 @@
 <div style="margin-left: 10%;width: 75%;margin-right: auto;">
     <h2>Car's 'R' Us Poor+ </h2>
     <div class="parent">
+
+        <!--Show cars-->
         <div class="item">
-            <h3>Show all Members or Cars</h3>
+            <h3>Show all Cars</h3>
             <button id="btn-get-all">Get all</button>
             <p>Show what you find here</p>
             <table class="table">
@@ -38,30 +40,64 @@
                 <tbody id="table-body-cars"></tbody>
             </table>
         </div>
+
+        <!--Find single Car-->
         <div class="item">
-            <h3>Find a single Member or Car</h3>
+            <h3>Find a single Car</h3>
             <label for="text-for-id">Id</label>&nbsp;<input id="text-for-id"/>
             <button>Find</button>
             <p>Show what you find here</p>
         </div>
+
+        <!--New Car -->
         <div class="item">
-            <h3>Add a Car or a Member</h3>
-            <div><label for="input-field1">Field-1</label>&nbsp;<input id="input-field1"/></div>
-            <div><label for="input-field2">Field-2</label>&nbsp;<input id="input-field2"/></div>
-            <p> ..... remaining fields</p>
-            <button>Submit new item</button>
-            <p>Show returned data, if any</p>
-            <p>Use one of the two GET pages to verify that "something" was added</p>
-        </div>
-        <div class="item">
-            <h3>Edit a Car or a Member</h3>
-            <label for="text-for-id2">Id</label>&nbsp;<input id="text-for-id2"/>
-            <button>Find item to edit</button>
-            <p>Show what you find here, and let users edit fields</p>
-            <p>......</p>
-            <button>Submit edited item</button>
-            <p>Use one of the two GET pages to verify that "something" was added</p>
-        </div>
+            <h3>Add a Car</h3>
+            <div>
+              <label for="input-field1">Brand</label>&nbsp;<input required
+                id="input-brand"
+              />
+            </div>
+            <div>
+              <label for="input-field2">Model</label>&nbsp;<input required
+                id="input-model"
+              />
+            </div>
+            <div>
+              <label for="input-field3">Price Per Day</label>&nbsp;<input required type="number"
+                id="input-priceprday"
+              />
+            </div>
+            <div>
+              <label for="input-field4">Best Discount</label>&nbsp;<input required type="number"
+                id="input-bestdiscount"
+              />
+            </div>
+  
+            <button id="btn-create-car">Submit new item</button>
+  
+            <h3 id="create-car-message"></h3>
+            <table class="table">
+                <thead>
+                    <tr><th>Brand</th><th>Model</th><th>PricePrDay</th><th>Best Discount</th></tr>                   
+                </thead>
+                <tbody id="table-body-cars"></tbody>
+            </table>
+          </div>
+          <!--Edit car-->
+          <div class="item">
+            <div class="item">
+                <h3>Edit a Car</h3>
+                <label for="text-for-id2">Id</label>&nbsp;<input id="text-for-id2" required type="number"/>
+                <button id="btn-fetch-car">Search for car</button>
+                <table class="table">
+                    <thead>
+                        <tr><th>ID</th><th>Brand</th><th>PricePrDay</th><th>Best Discount</th></tr>                   
+                    </thead>
+                    <tbody id="table-body-cars"></tbody>
+                </table>
+                <button id="btn-update-car">Update car</button>
+                <h3 id="update-car-message"></h3>
+              </div>
     </div>
 </div>
 <script src = "cars.js"></script>
