@@ -1,6 +1,6 @@
 document.getElementById("btn-get-all").onclick = getAllCars
 
-const URL = "http://localhost:8080/api/cars"
+const URL = "https://rami0904.azurewebsites.net/api/cars"
 function getAllCars(evt){
     fetch(URL)
           .then(res=>res.json())
