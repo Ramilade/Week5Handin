@@ -28,81 +28,54 @@
     <h2>Car's 'R' Us Poor+ </h2>
     <div class="parent">
 
-        <!--Show cars-->
+
+      <!--Show cars-->
         <div class="item">
             <h3>Show all Cars</h3>
             <button id="btn-get-all">Get all</button>
-            <table class="table">
+            <table class="table" style="color:#fff">
                 <thead>
                     <tr><th>ID</th><th>Model</th><th>Make</th><th>PricePrDay</th></tr>                   
                 </thead>
                 <tbody id="table-body-cars"></tbody>
             </table>
         </div>
-
-        <!--Find single Car-->
-        <div class="item">
-            <h3>Find a single Car</h3>
-            <label for="text-for-id">Id</label>&nbsp;<input id="text-for-id"/>
-            <button id="btn-find-car">Find</button>
-            <p id="car-id"></p>
-            <p id="car-brand"></p>
-            <p id="car-model"></p>
-            <p id="car-price"></p>
-            <p id="car-error"></p>
-        </div>
-
-        <!--New Car -->
-        <div class="item">
-            <h3>Add a Car</h3>
-            <div>
-              <label for="input-field1">Brand</label>&nbsp;<input required
-                id="input-brand"
-              />
-            </div>
-            <div>
-              <label for="input-field2">Model</label>&nbsp;<input required
-                id="input-model"
-              />
-            </div>
-            <div>
-              <label for="input-field3">Price Per Day</label>&nbsp;<input required type="number"
-                id="input-priceprday"
-              />
-            </div>
-            <div>
-              <label for="input-field4">Best Discount</label>&nbsp;<input required type="number"
-                id="input-bestdiscount"
-              />
-            </div>
   
-            <button id="btn-create-car">Submit new item</button>
-  
-            <h3 id="create-car-message"></h3>
-            <table class="table">
-                <thead>
-                    <tr><th>Brand</th><th>Model</th><th>PricePrDay</th><th>Best Discount</th></tr>                   
-                </thead>
-                <tbody id="table-body-cars"></tbody>
-            </table>
+  <!--Show Single car-->
+      <div class="item">
+        <h3>Find a single Car</h3>
+        <div class="mb-3 row">
+          <label for="input-car-id" class="col-sm-1 col-form-label">ID</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="input-car-id">
           </div>
-          <!--Edit car-->
-          <div class="item">
-            <div class="item">
-                <h3>Edit a Car</h3>
-                <label for="text-for-id2">Id</label>&nbsp;<input id="text-for-id2" required type="number"/>
-                <button id="btn-fetch-car">Search for car</button>
-                <table class="table">
-                    <thead>
-                        <tr><th>ID</th><th>Brand</th><th>PricePrDay</th><th>Best Discount</th></tr>                   
-                    </thead>
-                    <tbody id="table-body-cars"></tbody>
-                </table>
-                <button id="btn-update-car">Update car</button>
-                <h3 id="update-car-message"></h3>
-              </div>
+          <div class="col-sm-2">
+            <button id="btn-find-car" class="btn btn-outline-dark">Get Car</button>
+          </div>
+        </div>
+        <div>
+          <p id="car-brand"></p>
+          <p id="car-model"></p>
+          <p id="car-price"></p>
+        </div>
+        <p id="error-find-car" style="color:red"></p>
+      </div>
+
+      <!--Not yet implemented-->
+  
+      <div class="item">
+        <h3>Add a Car </h3>
+        WIP
+      </div>
+      <div class="item">
+        <h3>Edit a Car </h3>
+        <p>WIP</p>
+      </div>
+      <div style="margin-top: 1em;">
+        <a href="/">Back</a>
+      </div>
     </div>
-</div>
-<script src = "cars.js"></script>
-</body>
-</html>
+    <script src="cars.js"></script>
+  </body>
+  
+  </html>

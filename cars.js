@@ -1,5 +1,5 @@
 document.getElementById("btn-get-all").onclick = getAllCars
-document.getElementById("btn-fetch-car").onclick = getCarByID;
+
 
 
 
@@ -28,20 +28,26 @@ function makeTable(cars){
 
 
 
-function getCarByID(evt){
-    const id = document.getElementById("text-for-id").value
-    fetch(URL+"/"+id)
+document.getElementById("btn-find-car").onclick = findCar
+
+function findCar() {
+  const id = document.getElementById("input-car-id").value;
+  fetch(URL + '/' + id)
     .then(res => {
-     return res.json()})
-
-    .then(data => {
-     document.getElementById("car-id").innerText = data.id;
-     document.getElementById("car-brand").innerText = data.brand;
-     document.getElementById("car-model").innerText = data.model;
-     document.getElementById("car-model").innerText = data.pricePrDay;
-
+      if (!res.ok) {
+        alert("Car ID doesn't exist - Please input valid ID")
+        throw new Error("Car not found")
+        
+      }
+      return res.json()
     })
-    .catch((error) => {
-     document.getElementById("car-error").innerText = error
-    })
- }
+    .then(car => renderUserDetails(car))
+    .catch(error => document.getElementById("err-find-car").innerText = error)
+
+}
+
+function renderUserDetails(car) {
+  document.getElementById("car-brand").innerText = car.brand
+  document.getElementById("car-model").innerText = car.model
+  document.getElementById("car-price").innerText = car.pricePrDay
+}

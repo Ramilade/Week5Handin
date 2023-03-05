@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <title>Exercise 2 - get ID position</title>
+    <style>
+        .my-div {
+            width: 25px;
+            height: 25px;
+            background-color: rgb(255, 255, 255);
+            margin: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Click to get the position of the box</h2>
+    <div id="Outside">
+        <div id="Div-1" class="my-div"></div>
+        <div id="Div-2" class="my-div"></div>
+        <div id="Div-3" class="my-div"></div>
+        <div id="Div-4" class="my-div"></div>
+        <div id="Div-5" class="my-div"></div>
+        <div id="Div-6" class="my-div"></div>
+        <div id="Div-7" class="my-div"></div>
+        <div id="Div-8" class="my-div"></div>
+        <div id="Div-9" class="my-div"></div>
+        <div id="Div-10" class="my-div"></div>
+    </div>
+    <p id="p-text"></p>
+    <div style="margin-top: 1em;">
+        <a href="/">back</a>
+    </div>
+    <script>
+        document.getElementById("Outside").onclick = (evt) => {
+            const id = evt.target.id;
+            console.log("Div number: " + id)
+            document.getElementById("p-text").innerText = id;
+
+        }
+    </script>
+</body>
+
+</html>
