@@ -36,12 +36,27 @@
     
     <script>
         const cars = [
-            { id: 1, year: 1997, make: 'Ford', model: 'E350', price: 3000 },
-            { id: 2, year: 1999, make: 'Chevy', model: 'Venture', price: 4900 },
-            { id: 3, year: 2000, make: 'Chevy', model: 'Venture', price: 5000 },
-            { id: 4, year: 1996, make: 'Jeep', model: 'Grand Cherokee', price: 4799 },
-            { id: 5, year: 2005, make: 'Volvo', model: 'V70', price: 44799 }
-        ];
+    { id: 1, year: 1997, make: 'Ford', model: 'E350', price: 3000 },
+    { id: 2, year: 1999, make: 'Chevy', model: 'Venture', price: 4900 },
+    { id: 3, year: 2000, make: 'Chevy', model: 'Venture', price: 5000 },
+    { id: 4, year: 1996, make: 'Jeep', model: 'Grand Cherokee', price: 4799 },
+    { id: 5, year: 2005, make: 'Volvo', model: 'V70', price: 44799 },
+    { id: 6, year: 2010, make: 'Toyota', model: 'Camry', price: 12000 },
+    { id: 7, year: 2018, make: 'Honda', model: 'Civic', price: 18000 },
+    { id: 8, year: 2020, make: 'Tesla', model: 'Model S', price: 80000 },
+    { id: 9, year: 2015, make: 'Audi', model: 'A4', price: 25000 },
+    { id: 10, year: 2008, make: 'BMW', model: '3 Series', price: 10000 },
+    { id: 11, year: 2019, make: 'Mercedes-Benz', model: 'C-Class', price: 35000 },
+    { id: 12, year: 2007, make: 'Lexus', model: 'ES 350', price: 8000 },
+    { id: 13, year: 2012, make: 'Nissan', model: 'Altima', price: 9000 },
+    { id: 14, year: 2021, make: 'Ford', model: 'Mustang', price: 50000 },
+    { id: 15, year: 2018, make: 'Subaru', model: 'Impreza', price: 20000 },
+    { id: 16, year: 2016, make: 'Hyundai', model: 'Elantra', price: 10000 },
+    { id: 17, year: 2022, make: 'Kia', model: 'Sorento', price: 35000 },
+    { id: 18, year: 2015, make: 'Mazda', model: 'Mazda3', price: 12000 },
+    { id: 19, year: 2020, make: 'Chevrolet', model: 'Equinox', price: 25000 },
+    { id: 20, year: 2021, make: 'Jeep', model: 'Wrangler', price: 45000 }
+];
         function makeTableRows(carsToMap) {
             const tableRows = carsToMap.map(car => `
      <tr>
