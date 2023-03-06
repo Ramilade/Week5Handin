@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Exercise 4 - Filter Quest</title>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table" style="height: 20em;">
+            <thead id="header">
+                <tr id="headers">
+                    <th id="header-id"><a href="#">ID</a></th>
+                    <th id="header-year"><a href="#">Year</a></th>
+                    <th id="header-make"><a href="#">Make</a></th>
+                    <th id="header-model"><a href="#">Model</a></th>
+                    <th id="header-price"><a href="#">Price</a></th>
+                </tr>
+            </thead>
+
+            <tbody id="tbody" style="min-height: 14em;"></tbody>
+
+        </table>
+        <div><label for="filter-price">Price &nbsp;</label><input id="filter-price">
+            <button id="btn-filter-price" class="btn btn-outline-dark">Price less than</button>
+            <button id="btn-clear-filter" class="btn btn-outline-dark">Clear Filter</button>
+        </div>
+        <div style="margin-top: 1em;">
+            <a href="/">Back</a>
+        </div>
+    </div>
+    
+    <script>
+        const cars = [
+            { id: 1, year: 1997, make: 'Ford', model: 'E350', price: 3000 },
+            { id: 2, year: 1999, make: 'Chevy', model: 'Venture', price: 4900 },
+            { id: 3, year: 2000, make: 'Chevy', model: 'Venture', price: 5000 },
+            { id: 4, year: 1996, make: 'Jeep', model: 'Grand Cherokee', price: 4799 },
+            { id: 5, year: 2005, make: 'Volvo', model: 'V70', price: 44799 }
+        ];
+        function makeTableRows(carsToMap) {
+            const tableRows = carsToMap.map(car => `
+     <tr>
+       <td>${car.id}</td>
+       <td>${car.year}</td>
+       <td>${car.make}</td>
+       <td>${car.model}</td>
+       <td>${car.price}</td>
+     </tr>
+    `).join("\n")
+            document.getElementById("tbody").innerHTML = tableRows
+        }
+        makeTableRows(cars)
+
+        document.getElementById("btn-filter-price").onclick = () => {
+            const price = document.getElementById("filter-price").value
+            const filteredCars = cars.filter(car => car.price < price)
+            makeTableRows(filteredCars)
+        }
+
+        document.getElementById("btn-clear-filter").onclick = function () {
+            makeTableRows(cars)
+        }
+        let sortOrderMake = 1
+        document.getElementById("header-make").onclick = function () {
+            const sortedCars = cars.sort((a, b) => {
+                let sortResult = 0
+                if (a.make < b.make) sortResult = -1
+                if (a.make > b.make) sortResult = 1
+                sortResult *= sortOrderMake
+                return sortResult
+            })
+            sortOrderMake *= -1
+            makeTableRows(sortedCars)
+        }
+
+        let sortOrderYear = 1
+document.getElementById("header-year").onclick = function() {
+  const sortedCars = cars.sort((a, b) => {
+    let sortResult = 0
+    if (a.year < b.year) sortResult = -1
+    if (a.year > b.year) sortResult = 1
+    sortResult *= sortOrderYear
+    return sortResult
+  })
+  sortOrderYear *= -1
+  makeTableRows(sortedCars)
+}
+
+let sortOrderModel = 1
+document.getElementById("header-model").onclick = function() {
+  const sortedCars = cars.sort((a, b) => {
+    let sortResult = 0
+    if (a.model < b.model) sortResult = -1
+    if (a.model > b.model) sortResult = 1
+    sortResult *= sortOrderModel
+    return sortResult
+  })
+  sortOrderModel *= -1
+  makeTableRows(sortedCars)
+}
+
+let sortOrderID = 1
+document.getElementById("header-id").onclick = function() {
+  const sortedCars = cars.sort((a, b) => {
+    let sortResult = 0
+    if (a.id < b.id) sortResult = -1
+    if (a.id > b.id) sortResult = 1
+    sortResult *= sortOrderID
+    return sortResult
+  })
+  sortOrderID *= -1
+  makeTableRows(sortedCars)
+}
+
+let sortOrderPrice = 1
+document.getElementById("header-price").onclick = function() {
+  const sortedCars = cars.sort((a, b) => {
+    let sortResult = 0
+    if (a.price < b.price) sortResult = -1
+    if (a.price > b.price) sortResult = 1
+    sortResult *= sortOrderPrice
+    return sortResult
+  })
+  sortOrderPrice *= -1
+  makeTableRows(sortedCars)
+}
+
+
+    </script>
+</body>
+
+</html>
