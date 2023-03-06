@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <title>Exercise 3 - Remove X</title>
+</head>
+
+<body>
+    <h2>Exercise 3</h2>
+    <ul id="my-ul"></ul>
+    <form>
+        <input id="name-input">
+        <button id="btn-add">Add Name</button>
+        <button id="btn-rm-first">Remove First</button>
+        <button id="btn-rm-last">Remove Last</button>
+    </form>
+    <div style="margin-top: 1em;">
+        <a href="/">Back</a>
+    </div>
+    <script>
+        const names = ["Lars", "Peter", "Janne", "Susanne", "Mia", "Anders", "Karin", "Johan", "Helena", "David", "Emma", "Oscar", "Eva", "Fredrik", 
+        "Sara", "Christer", "Elin", "Roland", "Elvira", "Tobias", "Emelie", "Olof", "Jenny", "Niklas"];
+
+
+        function createListItems() {
+            document.getElementById("my-ul").innerHTML = names.map(name => `<li>${name}</li>`).join("")
+        }
+        createListItems()
+
+        document.getElementById("btn-add").onclick = (evt) => {
+            evt.preventDefault()
+            const newName = document.getElementById("name-input").value
+            names.push(newName)
+            createListItems()
+        }
+        document.getElementById("btn-rm-first").onclick = (evt) => {
+            evt.preventDefault()
+            names.shift()
+            createListItems()
+        }
+        document.getElementById("btn-rm-last").onclick = (evt) => {
+            evt.preventDefault()
+            names.pop()
+            createListItems()
+        }
+
+    </script>
+</body>
+
+</html>
