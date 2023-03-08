@@ -14,7 +14,7 @@ function getAllCars(evt){
 function makeTable(cars){
     const tableRows = cars.map(car => `
     <tr>
-        <td>${car.carId}</td>
+        <td>${car.id}</td>
         <td>${car.brand}</td>
         <td>${car.model}</td>
         <td>${car.pricePrDay}</td>
