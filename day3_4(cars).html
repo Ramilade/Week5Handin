@@ -21,6 +21,11 @@
             padding: 5px 5px 5px 2em;
             min-height: 250px;
         }
+
+        #car-table th {
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
     </style>
 </head>
 <body style="font-family: sans-serif;">
@@ -30,36 +35,61 @@
 
 
       <!--Show cars-->
-        <div class="item">
-            <h3>Show all Cars</h3>
-            <button id="btn-get-all">Get all</button>
-            <table class="table" style="color:#fff">
+      <div class="item">
+        <h3>Show all Cars</h3>
+        <button id="btn-get-all">Get all</button>
+        <div style="overflow-x: auto;">
+            <table class="table" style="color:#fff; border-collapse: collapse;">
                 <thead>
-                    <tr><th>ID</th><th>Make</th><th>Model</th><th>PricePrDay</th></tr>                   
+                    <tr style="border-bottom: 1px solid #fff;">
+                        <th style="padding: 0.5rem; border-right: 1px solid #fff;">ID</th>
+                        <th style="padding: 0.5rem; border-right: 1px solid #fff;">Make</th>
+                        <th style="padding: 0.5rem; border-right: 1px solid #fff;">Model</th>
+                        <th style="padding: 0.5rem;">PricePrDay</th>
+                    </tr>
                 </thead>
-                <tbody id="table-body-cars"></tbody>
+                <tbody id="table-body-cars">
+                </tbody>
             </table>
         </div>
+    </div>
+    
   
   <!--Show Single car-->
-      <div class="item">
-        <h3>Find a single Car</h3>
-        <div class="mb-3 row">
-          <label for="input-car-id" class="col-sm-1 col-form-label">ID</label>
-          <div class="col-sm-3">
-            <input type="text" class="form-control" id="input-car-id">
-          </div>
-          <div class="col-sm-2">
-            <button id="btn-find-car" class="btn btn-outline-dark">Get Car</button>
-          </div>
-        </div>
-        <div>
-          <p id="car-brand"></p>
-          <p id="car-model"></p>
-          <p id="car-price"></p>
-        </div>
-        <p id="error-find-car" style="color:red"></p>
+  <div class="item">
+    <h3>Find a single Car</h3>
+    <div class="mb-3 row">
+      <label for="input-car-id" class="col-sm-1 col-form-label">ID</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="input-car-id">
       </div>
+      <div class="col-sm-2">
+        <button id="btn-find-car">Get Car</button>
+      </div>
+    </div>
+    <div id="car-details">
+      <h4 style="margin-bottom: 1rem;">Car Details</h4>
+      <table id="car-table">
+        <thead>
+          <tr>
+            <th style="padding-right: 1rem; border-right: 1px solid #ddd;">Make</th>
+            <th style="padding-right: 1rem; border-right: 1px solid #ddd;">Model</th>
+            <th>Price Per Day</th>
+          </tr>
+        </thead>
+        <tbody id="car-table-body">
+          <tr>
+            <td id="car-make" style="border-right: 1px solid #ddd;"></td>
+            <td id="car-model" style="border-right: 1px solid #ddd;"></td>
+            <td id="car-price"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p id="err-find-car" style="color:red"></p>
+  </div>
+  
+  
 
       <!--Not yet implemented-->
   

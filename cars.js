@@ -28,26 +28,35 @@ function makeTable(cars){
 
 
 
-document.getElementById("btn-find-car").onclick = findCar
+const carTableBody = document.getElementById('car-table-body');
+const errorFindCar = document.getElementById('err-find-car');
+const btnFindCar = document.getElementById('btn-find-car');
+
+btnFindCar.addEventListener('click', findCar);
 
 function findCar() {
-  const id = document.getElementById("input-car-id").value;
-  fetch(URL + '/' + id)
-    .then(res => {
-      if (!res.ok) {
-        alert("Car ID doesn't exist - Please input valid ID")
-        throw new Error("Car not found")
-        
+  const carId = document.getElementById('input-car-id').value;
+  fetch(URL + '/' + carId)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Car not found');
       }
-      return res.json()
+      return response.json();
     })
-    .then(car => renderUserDetails(car))
-    .catch(error => document.getElementById("err-find-car").innerText = error)
-
-}
-
-function renderUserDetails(car) {
-  document.getElementById("car-brand").innerText = car.brand
-  document.getElementById("car-model").innerText = car.model
-  document.getElementById("car-price").innerText = car.pricePrDay
+    .then(car => {
+      // Populate table with fetched data
+      carTableBody.innerHTML = `
+        <tr>
+          <td>${car.brand}</td>
+          <td>${car.model}</td>
+          <td>${car.pricePrDay}</td>
+        </tr>
+      `;
+      errorFindCar.textContent = ''; // clear error message
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      errorFindCar.textContent = error.message;
+      carTableBody.innerHTML = ''; // clear table
+    });
 }
